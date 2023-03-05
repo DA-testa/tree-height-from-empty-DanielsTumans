@@ -42,7 +42,7 @@ def main():
         if 'a' in file:
             print ("wrong")
         bebr = "test/" + bebr
-        with open (bebr, 'r') as file
+        with open (bebr, 'r') as file:
             n = int(file.readline())
             parents = [int(x) for x in file.readline().split()]
         height = compute_height(n, parents)
