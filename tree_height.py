@@ -32,7 +32,7 @@ def compute_height(n, parents):
 
 
 def main():
-    bebr = input
+    bebr = str(input())
     if "I" in bebr:
         n = int(input())
         parents = [int(z) for z in input().split()]
@@ -41,6 +41,7 @@ def main():
         filer = input()
         if 'a' in file:
             print ("wrong")
+            exit()
         bebr = "test/" + bebr
         with open (bebr, 'r') as file:
             n = int(file.readline())
