@@ -16,14 +16,14 @@ def compute_height(n, parents):
         
         
         
-def max_height(r):
-   height = 1
-   if not tree[r]:
-        return height
-   else:
-        for child in tree[r]:
-           height = (height, max_height(child))
-        return height+1
+    def max_height(r):
+        height = 1
+        if not tree[r]:
+            return height
+        else:
+            for child in tree[r]:
+                height = (height, max_height(child))
+            return height+1
     return max_height(root)
     
     
