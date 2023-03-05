@@ -10,7 +10,7 @@ def compute_height(n, parents):
   for i, in range(n):
     if parents[i] == -1:
         root = i
-    else
+    else:
         tree[parents[i]].append(i)
         
         
