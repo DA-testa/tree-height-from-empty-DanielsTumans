@@ -4,27 +4,27 @@ import sys
 import threading
 import numpy
 
-def compute_height(v, parents):
+def compute_height(n, parents):
     # Write this function
-  tree = [[] for _ in range(v)]
-  for i, in range(v):
-    if parents[i] == -1:
+  tree = [[] for _ in range(n)]
+  for i, in parent in enumerate(parents):
+    if parents == -1:
         root = i
     else:
-        tree[parents[i]].append(i)
+        tree[parent].append(i)
         
         
         
         
-    def max_height(r):
-        height = 1
+    def max_heights(r):
+        
         if not tree[r]:
-            return height
-        else:
-            for child in tree[r]:
-                height = (height, max_height(child))
-            return height+1
-    return max_height(root)
+            return 0
+        
+            
+        return max(max_heights(child) for child in tree[r]) + 1
+    max_height = max_heights(root) + 1       
+    return max_height
     
     
      
