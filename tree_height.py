@@ -7,7 +7,7 @@ import numpy
 def compute_height(n, parents):
     # Write this function
   tree = [[] for _ in range(n)]
-  for i, in range(n)
+  for i, in range(n):
     if parents[i] == -1:
         root = i
     else
