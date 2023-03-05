@@ -4,10 +4,10 @@ import sys
 import threading
 import numpy
 
-def compute_height(n, parents):
+def compute_height(v, parents):
     # Write this function
-  tree = [[] for _ in range(n)]
-  for i, in range(n):
+  tree = [[] for _ in range(v)]
+  for i, in range(v):
     if parents[i] == -1:
         root = i
     else:
