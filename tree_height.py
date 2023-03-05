@@ -38,12 +38,12 @@ def main():
         parents = [int(z) for z in input().split()]
         print(compute_height(n, parents))
     elif "F" in bebr:
-        filer = input()
-        if 'a' in file:
+        bebrik = str(input())
+        if 'a' in bebrik:
             print ("wrong")
             exit()
-        bebr = "test/" + bebr
-        with open (bebr, 'r') as file:
+        bebrik = "test/" + bebrik
+        with open (bebrik, 'r') as file:
             n = int(file.readline())
             parents = [int(x) for x in file.readline().split()]
         height = compute_height(n, parents)
