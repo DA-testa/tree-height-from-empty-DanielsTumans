@@ -1,30 +1,45 @@
 # python3
-
+# 221RDB190DanielsTumans
 import sys
 import threading
 
-
 def compute_height(n, parents):
-    # Write this function
-    max_height = 0
-    # Your code here
+    tree = [[] for _ in range(n)]
+    for i, parent in enumerate(parents):
+        if parent == -1:
+            root = i
+        else:
+            tree[parent].append(i)
+            
+    def height(node):
+        if not tree[node]:
+            return 0
+        return max(height(child) for child in tree[node]) + 1
+    
+    max_height = height(root) + 1
     return max_height
 
-
 def main():
-    # implement input form keyboard and from files
     
-    # let user input file name to use, don't allow file names with letter a
-    # account for github input inprecision
+    bebr = str(input())
     
-    # input number of elements
-    # input values in one variable, separate with space, split these values in an array
-    # call the function and output it's result
+    if "I" in bebr:
+        n = int(input())
+        parents = [int(z) for z in input().split()]
+        print(compute_height(n, parents))
 
+    elif "F" in bebr:
+        bebrik = str(input())
+        if 'a' in bebrik:
+            print("Error")
+            exit()
+        bebrik = "test/" + bebrik
+        with open(bebrik, 'r') as file:
+            n = int(file.readline())
+            parents = [int(z) for z in file.readline().split()]
+        height = compute_height(n, parents)
+        print(height)
 
-# In Python, the default limit on recursion depth is rather low,
-# so raise it here for this problem. Note that to take advantage
-# of bigger stack, we have to launch the computation in a new thread.
-sys.setrecursionlimit(10**7)  # max depth of recursion
-threading.stack_size(2**27)   # new thread will get stack of such size
+sys.setrecursionlimit(10**7)
+threading.stack_size(2**27)
 threading.Thread(target=main).start()
