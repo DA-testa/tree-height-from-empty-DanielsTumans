@@ -8,7 +8,7 @@ def compute_height(n, parents):
     # Write this function
   tree = [[] for _ in range(n)]
   for i, in parent in enumerate(parents):
-    if parents == -1:
+    if parent == -1:
         root = i
     else:
         tree[parent].append(i)
@@ -45,7 +45,7 @@ def main():
         bebrik = "test/" + bebrik
         with open (bebrik, 'r') as file:
             n = int(file.readline())
-            parents = [int(x) for x in file.readline().split()]
+            parents = [int(z) for z in file.readline().split()]
         height = compute_height(n, parents)
         print(height)
 
