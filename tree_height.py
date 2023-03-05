@@ -21,22 +21,22 @@ def compute_height(n, parents):
 
 def main():
     
-    text = str(input())
+    bebr = str(input())
     
-    if "I" in text:
+    if "I" in bebr:
         n = int(input())
-        parents = [int(x) for x in input().split()]
+        parents = [int(z) for z in input().split()]
         print(compute_height(n, parents))
 
-    elif "F" in text:
-        filename = str(input())
-        if 'a' in filename:
-            print("Invalid filename")
+    elif "F" in bebr:
+        bebrik = str(input())
+        if 'a' in bebrik:
+            print("Error")
             exit()
-        filename = "test/" + filename
-        with open(filename, 'r') as file:
+        bebrik = "test/" + bebrik
+        with open(bebrik, 'r') as file:
             n = int(file.readline())
-            parents = [int(x) for x in file.readline().split()]
+            parents = [int(z) for z in file.readline().split()]
         height = compute_height(n, parents)
         print(height)
 
